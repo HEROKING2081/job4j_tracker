@@ -13,14 +13,9 @@ public class Jukebox {
     }
 
     public static void main(String[] args) {
-        Jukebox one = new Jukebox();
-        Jukebox two = new Jukebox();
-        Jukebox tree = new Jukebox();
-        int song1 = 1;
-        int song2 = 2;
-        int notSong = 34;
-        one.music(song1);
-        two.music(song2);
-        tree.music(notSong);
+        Jukebox song = new Jukebox();
+        song.music(1);
+        song.music(2);
+        song.music(35);
     }
 }
