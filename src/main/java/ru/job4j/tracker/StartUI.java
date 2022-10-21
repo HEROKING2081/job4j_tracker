@@ -18,7 +18,7 @@ public class StartUI {
                 tracker.add(item);
                 System.out.println("Добавленная заявка: " + item);
             } else if (select == 1) {
-                System.out.println("=== Посмотреть все заявки ===");
+                System.out.println("=== Посмотреть все Заявки ===");
                 Item[] items = tracker.findAll();
                 if (items.length > 0) {
                     for (Item item : items) {
@@ -28,7 +28,7 @@ public class StartUI {
                     System.out.println("Хранилище еще не содержит заявок");
                 }
             } else if (select == 2) {
-                System.out.println("=== Изменить заявку ===");
+                System.out.println("=== Изменить Заявку ===");
                 System.out.print("Введите id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 System.out.print("Введите имя: ");
@@ -38,6 +38,15 @@ public class StartUI {
                     System.out.println("Заявка изменена успешно.");
                 } else {
                     System.out.println("Ошибка замены заявки.");
+                }
+            } else if (select == 3) {
+                System.out.println("=== Удаление Заявки ===");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                if (tracker.delete(id)) {
+                    System.out.println("Заявка удалена успешно.");
+                } else {
+                    System.out.println("Ошибка удаления заявки.");
                 }
             } else if (select == 6) {
                 run = false;
