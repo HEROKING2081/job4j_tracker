@@ -41,7 +41,7 @@ public class StartUI {
                 }
             } else if (select == 3) {
                 System.out.println("=== Удаление Заявки ===");
-                System.out.print("Enter id: ");
+                System.out.print("Введите id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 if (tracker.delete(id)) {
                     System.out.println("Заявка удалена успешно.");
@@ -49,8 +49,8 @@ public class StartUI {
                     System.out.println("Ошибка удаления заявки.");
                 }
             } else if (select == 4) {
-                System.out.println("=== Find item by id ===");
-                System.out.print("Enter id: ");
+                System.out.println("=== Вывод заявки по id ===");
+                System.out.print("Введите id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 Item item = tracker.findById(id);
                 if (item != null) {
