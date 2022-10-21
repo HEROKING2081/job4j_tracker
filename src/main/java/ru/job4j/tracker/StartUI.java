@@ -8,15 +8,25 @@ public class StartUI {
         boolean run = true;
         while (run) {
             showMenu();
-            System.out.print("Select: ");
+            System.out.print("Выбор: ");
             int select = Integer.parseInt(scanner.nextLine());
             if (select == 0) {
-                System.out.println("=== Create a new Item ===");
-                System.out.print("Enter name: ");
+                System.out.println("=== Сoздание новой Заявки ===");
+                System.out.print("Введите имя: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);
                 System.out.println("Добавленная заявка: " + item);
+            } else if (select == 1) {
+                System.out.println("=== Посмотреть все заявки ===");
+                Item[] items = tracker.findAll();
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Хранилище еще не содержит заявок");
+                }
             } else if (select == 6) {
                 run = false;
             }
@@ -27,9 +37,9 @@ public class StartUI {
         String[] menu = {
                 "Добавление заявки", "Вывод всех заявок", "Изменение заявки",
                 "Удаление заявки", "Вывод заявки по id", "Вывод заявок по имени",
-                "Exit Program"
+                "Закрыть программу"
         };
-        System.out.println("Menu:");
+        System.out.println("Меню:");
         for (int i = 0; i < menu.length; i++) {
             System.out.println(i + ". " + menu[i]);
         }
