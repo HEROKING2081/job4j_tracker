@@ -6,6 +6,7 @@ import java.util.List;
 
 public class StartUI {
     private final Output out;
+
     public StartUI(Output out) {
         this.out = out;
     }
@@ -30,6 +31,7 @@ public class StartUI {
             out.println(i + ". " + actions.get(i).name());
         }
     }
+
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
