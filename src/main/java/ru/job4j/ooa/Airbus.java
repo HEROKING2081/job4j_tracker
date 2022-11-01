@@ -5,7 +5,7 @@ public final class Airbus extends Aircraft {
 
     private String name;
 
-    public Airbus(String name) {
+    public Airbus(final String name) {
         this.name = name;
     }
 
@@ -13,7 +13,7 @@ public final class Airbus extends Aircraft {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 

@@ -6,7 +6,7 @@ public class Config {
     private int position;
     private String[] properties;
 
-    public Config(String name) {
+    public Config(final String name) {
         this.name = name;
     }
 
@@ -14,11 +14,11 @@ public class Config {
         System.out.println(position);
     }
 
-    public String getProperty(String key) {
+    public String getProperty(final String key) {
         return search(key);
     }
 
-    private String search(String key) {
+    private String search(final String key) {
         return key;
     }
 }

@@ -3,7 +3,7 @@ package ru.job4j.io;
 import java.util.Scanner;
 
 public class Dendy {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner input = new Scanner(System.in);
         boolean run = true;
         while (run) {

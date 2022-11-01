@@ -4,7 +4,7 @@ public class EditAction implements UserAction {
 
     private final Output out;
 
-    public EditAction(Output out) {
+    public EditAction(final Output out) {
         this.out = out;
     }
 
@@ -14,7 +14,7 @@ public class EditAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(final Input input, final Tracker tracker) {
         System.out.println(System.lineSeparator() + "=== Edit item ===");
         int id = input.askInt("Item id: ");
         String newName = input.askStr("New item name: ");
@@ -24,8 +24,10 @@ public class EditAction implements UserAction {
         } else {
             System.out.println("ERROR. Item not found.");
         }
-        System.out.println("=============================" + System.lineSeparator()
-                + System.lineSeparator() + System.lineSeparator());
+        System.out.println("============================="
+                + System.lineSeparator()
+                + System.lineSeparator()
+                + System.lineSeparator());
 
         return true;
     }

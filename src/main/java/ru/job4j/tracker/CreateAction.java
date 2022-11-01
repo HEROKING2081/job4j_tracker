@@ -4,7 +4,7 @@ public class CreateAction implements UserAction {
 
     private final Output out;
 
-    public CreateAction(Output out) {
+    public CreateAction(final Output out) {
         this.out = out;
     }
 
@@ -14,13 +14,17 @@ public class CreateAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(final Input input, final Tracker tracker) {
         out.println(System.lineSeparator() + "=== Create a new Item ===");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         tracker.add(item);
-        out.println("Item successful created." + System.lineSeparator() + "============================="
-                + System.lineSeparator() + System.lineSeparator() + System.lineSeparator());
+        out.println("Item successful created."
+                + System.lineSeparator()
+                + "============================="
+                + System.lineSeparator()
+                + System.lineSeparator()
+                + System.lineSeparator());
 
         return true;
     }

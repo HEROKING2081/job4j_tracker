@@ -10,11 +10,11 @@ public class Cat {
         System.out.println(this.name + "'s eat " + this.food);
     }
 
-    public void eat(String meat) {
+    public void eat(final String meat) {
         this.food = meat;
     }
 
-    public void giveNick(String nick) {
+    public void giveNick(final String nick) {
         this.name = nick;
     }
 
@@ -23,7 +23,7 @@ public class Cat {
         return voice;
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Cat peppy = new Cat();
         String say = peppy.sound();
         System.out.println("Peppy says " + say);

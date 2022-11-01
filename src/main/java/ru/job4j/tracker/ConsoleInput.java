@@ -6,13 +6,13 @@ public class ConsoleInput implements Input {
     private Scanner scanner = new Scanner(System.in);
 
     @Override
-    public String askStr(String question) {
+    public String askStr(final String question) {
         System.out.print(question);
         return scanner.nextLine();
     }
 
     @Override
-    public int askInt(String question) {
+    public int askInt(final String question) {
         return Integer.parseInt(askStr(question));
     }
 }

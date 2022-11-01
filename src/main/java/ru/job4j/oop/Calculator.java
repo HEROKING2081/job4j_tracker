@@ -4,23 +4,23 @@ public class Calculator {
 
     private static int x = 5;
 
-    public static int sum(int y) {
+    public static int sum(final int y) {
         return x + y;
     }
 
-    public int multiply(int a) {
+    public int multiply(final int a) {
         return x * a;
     }
 
-    public static int minus(int z) {
+    public static int minus(final int z) {
         return z - x;
     }
 
-    public int divide(int b) {
+    public int divide(final int b) {
         return b / x;
     }
 
-    public int sumAllOperation(int c) {
+    public int sumAllOperation(final int c) {
         return sum(c) + multiply(c) + minus(c) + divide(c);
     }
 

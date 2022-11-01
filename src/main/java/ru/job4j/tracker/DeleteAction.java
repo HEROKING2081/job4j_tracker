@@ -4,7 +4,7 @@ public class DeleteAction implements UserAction {
 
     private final Output out;
 
-    public DeleteAction(Output out) {
+    public DeleteAction(final Output out) {
         this.out = out;
     }
 
@@ -14,7 +14,7 @@ public class DeleteAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(final Input input, final Tracker tracker) {
         System.out.println(System.lineSeparator() + "=== Delete item ===");
         int id = input.askInt("Item id: ");
         if (tracker.delete(id)) {
@@ -22,8 +22,10 @@ public class DeleteAction implements UserAction {
         } else {
             System.out.println("ERROR. Item not found.");
         }
-        System.out.println("=============================" + System.lineSeparator()
-                + System.lineSeparator() + System.lineSeparator());
+        System.out.println("============================="
+                + System.lineSeparator()
+                + System.lineSeparator()
+                + System.lineSeparator());
 
         return true;
     }

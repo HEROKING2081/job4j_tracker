@@ -10,7 +10,7 @@ public class Error {
 
     }
 
-    public Error(boolean active, int status, String message) {
+    public Error(final boolean active, final int status, final String message) {
         this.active = active;
         this.status = status;
         this.message = message;
@@ -22,7 +22,7 @@ public class Error {
         System.out.println(message);
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Error error = new Error();
         error.printInfo();
         Error error404 = new Error(true, 404, "!ERROR! ---> ERROR 404");

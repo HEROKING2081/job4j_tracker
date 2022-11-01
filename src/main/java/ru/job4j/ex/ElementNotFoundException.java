@@ -1,8 +1,9 @@
 package ru.job4j.ex;
 
-public class ElementNotFoundException extends Exception{
+public class ElementNotFoundException extends Exception {
 
-    public static int indexOf(String[] value, String key) throws ElementNotFoundException {
+    public static int indexOf(final String[] value, final String key)
+            throws ElementNotFoundException {
         int rsl = -1;
         for (int i = 0; i < value.length; i++) {
             if (value[i].equals(key)) {
@@ -16,7 +17,7 @@ public class ElementNotFoundException extends Exception{
         return rsl;
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         try {
             String[] words = {"Mouse", "Dog", "Cat", "Pig"};
             indexOf(words, "Horse");

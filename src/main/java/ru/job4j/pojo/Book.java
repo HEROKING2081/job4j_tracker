@@ -5,7 +5,7 @@ public class Book {
     private String name;
     private int pages;
 
-    public Book(String name, int pages) {
+    public Book(final String name, final int pages) {
         this.name = name;
         this.pages = pages;
     }
@@ -14,7 +14,7 @@ public class Book {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -22,7 +22,7 @@ public class Book {
         return pages;
     }
 
-    public void setPages(int pages) {
+    public void setPages(final int pages) {
         this.pages = pages;
     }
 }

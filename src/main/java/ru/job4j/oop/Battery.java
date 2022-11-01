@@ -4,7 +4,7 @@ public class Battery {
 
     private int load;
 
-    public Battery(int load) {
+    public Battery(final int load) {
         this.load = load;
     }
 
@@ -12,7 +12,7 @@ public class Battery {
         return load;
     }
 
-    public void exchange(Battery another) {
+    public void exchange(final Battery another) {
         another.load = another.load + this.load;
         this.load = 0;
     }

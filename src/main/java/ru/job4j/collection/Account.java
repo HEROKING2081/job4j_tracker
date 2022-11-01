@@ -7,16 +7,21 @@ public class Account {
     private final String username;
     private final String deposit;
 
-    public Account(String passport, String username, String deposit) {
+    public Account(final String passport, final String username,
+                   final String deposit) {
         this.passport = passport;
         this.username = username;
         this.deposit = deposit;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Account account = (Account) o;
         return Objects.equals(passport, account.passport);
     }
@@ -28,10 +33,10 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "passport='" + passport + '\'' +
-                ", username='" + username + '\'' +
-                ", deposit='" + deposit + '\'' +
-                '}';
+        return "Account{"
+                + "passport='" + passport + '\''
+                + ", username='" + username + '\''
+                + ", deposit='" + deposit + '\''
+                + '}';
     }
 }

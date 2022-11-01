@@ -6,7 +6,7 @@ public class Citizen {
     private final String passport;
     private final String username;
 
-    public Citizen(String passport, String username) {
+    public Citizen(final String passport, final String username) {
         this.passport = passport;
         this.username = username;
     }
@@ -20,9 +20,13 @@ public class Citizen {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Citizen citizen = (Citizen) o;
         return Objects.equals(passport, citizen.passport);
     }
