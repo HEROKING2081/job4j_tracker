@@ -12,6 +12,4 @@ public class Calculator {
                 add(second, third)
         );
     }
-
-
 }

@@ -65,15 +65,10 @@ public class AnalyzeByMapTest {
         );
         for (Label label : average) {
             switch (label.getName()) {
-                case ("Ivanov"):
-                    assertThat(label.getScore()).isEqualTo(80.0);
-                    break;
-                case ("Petrov"):
-                    assertThat(label.getScore()).isEqualTo(80.0);
-                    break;
-                case ("Sidorov"):
-                    assertThat(label.getScore()).isEqualTo(60.0);
-                    break;
+                case ("Ivanov") -> assertThat(label.getScore()).isEqualTo(80.0);
+                case ("Petrov") -> assertThat(label.getScore()).isEqualTo(80.0);
+                case ("Sidorov") -> assertThat(label.getScore()).isEqualTo(60.0);
+                default -> throw new IllegalStateException("Unexpected value: " + label.getName());
             }
         }
     }
@@ -107,15 +102,10 @@ public class AnalyzeByMapTest {
         );
         for (Label label : average) {
             switch (label.getName()) {
-                case ("Math"):
-                    assertThat(label.getScore()).isEqualTo(70D);
-                    break;
-                case ("Lang"):
-                    assertThat(label.getScore()).isEqualTo(70D);
-                    break;
-                case ("Philosophy"):
-                    assertThat(label.getScore()).isEqualTo(70D);
-                    break;
+                case ("Math") -> assertThat(label.getScore()).isEqualTo(70D);
+                case ("Lang") -> assertThat(label.getScore()).isEqualTo(70D);
+                case ("Philosophy") -> assertThat(label.getScore()).isEqualTo(70D);
+                default -> throw new IllegalStateException("Unexpected value: " + label.getName());
             }
         }
     }

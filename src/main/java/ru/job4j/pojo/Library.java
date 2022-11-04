@@ -12,7 +12,7 @@ public class Library {
         books[1] = threeMusketeers;
         books[2] = robinsonCrusoe;
         books[3] = cleanCode;
-        for (int i =0; i < books.length; i++) {
+        for (int i = 0; i < books.length; i++) {
             Book bk = books[i];
             System.out.println(bk.getName() + " - "
                     + bk.getPages() + " pages.");
