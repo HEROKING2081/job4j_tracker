@@ -25,6 +25,7 @@ public class BankService {
      * @param passport для верификации пользователя
      * @param account новый счет пользлвателя
      */
+
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user != null && users.get(user).contains(account)) {
@@ -36,6 +37,7 @@ public class BankService {
      * @param passport идентефикатор пользователя
      * @return возврашает User с passport идентичным введенному идентефикатору
      */
+
     public User findByPassport(String passport) {
         User user = null;
         for (User key : users.keySet()) {
@@ -53,6 +55,7 @@ public class BankService {
      * по извлеченному пользователю возвращается коллекция с account
      * @return возврашяет аккаунт с реквизитами идентичными введенным
      */
+
     public Account findByRequisite(String passport, String requisite) {
         Account account = null;
         User user = findByPassport(passport);
@@ -75,6 +78,7 @@ public class BankService {
      * @param amount сумма перевода
      * @return возвращает осуществлен перевож или нет
      */
+
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         Account accountSrc = findByRequisite(srcPassport, srcRequisite);
