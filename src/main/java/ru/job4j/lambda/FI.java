@@ -10,8 +10,7 @@ public class FI {
                 new Attachment("image 3", 120),
                 new Attachment("image 2", 23)
         };
-        Comparator<Attachment> comparator = (left, right)
-                -> Integer.compare(left.getSize(), right.getSize());
+        Comparator<Attachment> comparator = Comparator.comparingInt(Attachment::getSize);
         Arrays.sort(atts, comparator);
     }
 }
