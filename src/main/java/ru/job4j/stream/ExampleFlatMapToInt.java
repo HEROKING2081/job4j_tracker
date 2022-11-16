@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class FlatMapToIntExample {
+public class ExampleFlatMapToInt {
     public static void main(String[] args) {
         int[] array1 = {1, 2, 3};
         int[] array2 = {4, 5, 6};
