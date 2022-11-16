@@ -10,7 +10,7 @@ public class BankService {
     private final Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        users.put(user, new ArrayList<Account>());
+        users.put(user, new ArrayList<>());
     }
 
     public IntPredicate deleteUser(String passport) {
@@ -39,13 +39,12 @@ public class BankService {
      */
 
     public User findByPassport(String passport) {
-        User user = null;
-        for (User key : users.keySet()) {
-            if (passport.equals(key.getPassport())) {
-                user = key;
-            }
-        }
-        return user;
+        return users.keySet()
+                .stream()
+                .filter(s -> s.getPassport()
+                        .equals(passport))
+                .findFirst()
+                .orElse(null);
     }
     /**
      *
@@ -57,16 +56,12 @@ public class BankService {
      */
 
     public Account findByRequisite(String passport, String requisite) {
-        Account account = null;
-        User user = findByPassport(passport);
-        if (user != null) {
-            for (Account acc : users.get(user)) {
-                if (requisite.equals(acc.getRequisite())) {
-                    account = acc;
-                }
-            }
-        }
-        return account;
+        return users.get(findByPassport(passport))
+                .stream()
+                .filter(s -> s.getRequisite()
+                        .equals(requisite))
+                .findFirst()
+                .orElse(null);
     }
     /**
      * Метод принимает пасспорт и реквизиты получателя и отправителя
