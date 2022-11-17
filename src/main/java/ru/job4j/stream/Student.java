@@ -37,4 +37,8 @@ public class Student {
     public int hashCode() {
         return Objects.hash(score, surname);
     }
+
+    public int compare(Student right) {
+        return right.getScore() - this.getScore();
+    }
 }
