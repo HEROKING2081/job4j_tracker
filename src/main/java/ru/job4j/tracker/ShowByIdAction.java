@@ -14,7 +14,7 @@ public class ShowByIdAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, MemTracker tracker) {
         System.out.println(System.lineSeparator() + "=== Find item by Id ===");
         int id = input.askInt("Enter item id: ");
         Item rsl = tracker.findById(id);

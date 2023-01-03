@@ -1,17 +1,15 @@
 package ru.job4j.tracker;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class StartUI {
     private final Output out;
 
     public StartUI(Output out) {
-        this.out = out;
+        this.out =  out;
     }
 
-    public void init(Input input, Tracker tracker, List<UserAction> actions) {
+    public void init(Input input, MemTracker tracker, List<UserAction> actions) {
         boolean run = true;
         while (run) {
             this.showMenu(actions);
@@ -33,15 +31,23 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        Output output = new ConsoleOutput();
-        Input input = new ValidateInput(output, new ConsoleInput());
-        Tracker tracker = new Tracker();
-        List<UserAction> actions = new ArrayList<>(Arrays.asList(
-                new CreateAction(output), new ShowAction(output), new EditAction(output),
-                new DeleteAction(output), new ShowByIdAction(output), new ShowToNameAction(output),
-                new ExitAction(output)
-        )
+        Input input = new ValidateInput(
+                new ConsoleInput()
         );
-        new StartUI(output).init(input, tracker, actions);
+        Output output = new ConsoleOutput();
+        try (Store tracker = new SqlTracker()) {
+            List<UserAction> actions = List.of(
+                    new CreateAction(output),
+                    new EditAction(output),
+                    new DeleteAction(output),
+                    new ShowAction(output),
+                    new ShowByIdAction(output),
+                    new ShowToNameAction(output),
+                    new ExitAction()
+            );
+            new StartUI(output).init(input, (MemTracker) tracker, actions);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

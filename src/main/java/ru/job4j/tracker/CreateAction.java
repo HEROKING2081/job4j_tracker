@@ -14,7 +14,7 @@ public class CreateAction implements UserAction {
     }
 
     @Override
-    public boolean execute(final Input input, final Tracker tracker) {
+    public boolean execute(final Input input, final MemTracker tracker) {
         out.println(System.lineSeparator() + "=== Create a new Item ===");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
