@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Properties;
 
 public class SqlTracker implements Store {
@@ -128,5 +129,18 @@ public class SqlTracker implements Store {
             e.printStackTrace();
         }
         return item;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SqlTracker that = (SqlTracker) o;
+        return Objects.equals(cn, that.cn);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cn);
     }
 }
